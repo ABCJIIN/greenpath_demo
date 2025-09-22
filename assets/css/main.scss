@@ -536,6 +536,8 @@ footer {
                     bottom: 0;
                     left: 0;
                     animation: floatingApp01 2s alternate-reverse infinite;
+                    aspect-ratio: 449 / 651;
+                    will-change: transform;
                     @include util.tablet_junction {
                         width: 279px;
                     }
@@ -547,6 +549,8 @@ footer {
                     top: 0;
                     right: 0;
                     animation: floatingApp02 2s 0.2s alternate-reverse infinite;
+                    aspect-ratio: 563 / 769; 
+                    will-change: transform;
                     @include util.tablet_junction {
                         width: 350px;
                     }
