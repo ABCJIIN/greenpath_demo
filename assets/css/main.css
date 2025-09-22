@@ -657,6 +657,8 @@ footer .sub-ft-inner .copyright {
   bottom: 0;
   left: 0;
   animation: floatingApp01 2s alternate-reverse infinite;
+  aspect-ratio: 449/651;
+  will-change: transform;
 }
 @media (max-width: 950px) {
   .main-visual .inner .app-img-wrap object.cleanon-app, .main-visual .inner .app-img-wrap img.cleanon-app {
@@ -670,6 +672,8 @@ footer .sub-ft-inner .copyright {
   top: 0;
   right: 0;
   animation: floatingApp02 2s 0.2s alternate-reverse infinite;
+  aspect-ratio: 563/769;
+  will-change: transform;
 }
 @media (max-width: 950px) {
   .main-visual .inner .app-img-wrap object.cleantok-app, .main-visual .inner .app-img-wrap img.cleantok-app {
@@ -1102,6 +1106,8 @@ footer .sub-ft-inner .copyright {
   height: 667px;
   height: clamp(499px, 34.74vw, 667px);
   z-index: 1;
+  aspect-ratio: 339/667;
+  will-change: transform;
 }
 @media (max-width: 1280px) {
   .main-sec .inner .app-img-wrap {
@@ -1285,7 +1291,6 @@ footer .sub-ft-inner .copyright {
   position: relative;
   display: block;
   width: 100%;
-  height: 100%;
   object-fit: contain;
   z-index: 3;
 }
