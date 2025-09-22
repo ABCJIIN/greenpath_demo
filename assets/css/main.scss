@@ -951,6 +951,8 @@ footer {
             height: 667px;
             height: clamp(499px, 34.740vw, 667px);
             z-index: 1;
+            aspect-ratio: 339 / 667; 
+            will-change: transform;
             @include util.notebook {
                 right: 50px;
             }
