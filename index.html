@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenPATH</title>
+    <meta name="description" content="기술 혁신과 책임 경영을 통해 생활폐기물 관리 산업의 지속 가능한 미래를 열어가겠습니다.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="GreenPATH">
+    <meta property="og:description" content="기술 혁신과 책임 경영을 통해 생활폐기물 관리 산업의 지속 가능한 미래를 열어가겠습니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/images/og_image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple_touch_icon.png" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/font.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <!-- js -->
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/common.js"></script>
+
+    <!-- 이미지 프리로드 -->
+    <link rel="preload" href="/assets/images/common/app_main_visual_cleanon.svg" as="image" type="image/svg+xml" fetchpriority="high">
+    <link rel="preload" href="/assets/images/common/app_main_visual_cleantok.svg" as="image" type="image/svg+xml" fetchpriority="high">
+
+</head>
+<body>
+    <div class="main" id="wrapper">
+        <header>
+            <div class="hd-inner">
+                <h1 class="logo">
+                    <a href="./index.html">
+                        <img src="./assets/images/logo/logo.svg" alt="그린패스 로고">
+                    </a>
+                </h1>
+                <a class="contact-btn" href="mailto:greenpathpark@gmail.com">문의하기</a>
+            </div>
+        </header>
+        <main id="wrap">
+            <button class="top-btn" type="button" aria-label="맨 위로">TOP</button>
+            <section class="main-visual">
+                <div class="inner-wrap">
+                    <div class="inner">
+                        <div class="txt-wrap">
+                            <p class="sub-tit">Waste Management DX Platform</p>
+                            <strong class="main-tit">GreenPATH <br class="d-mb">Korea</strong>
+                            <p class="main-copy">
+                                지속가능 경영을 위한 스마트 혁신.<br>
+                                생활폐기물 수집·운반과 민원관리의 디지털 전환으로 운영 효율을 최적화하고,<br>
+                                데이터 경영을 통한 산업안전 강화와 ESG 경영 실현으로 입찰 경쟁력을 보장하는 ONE 솔루션.
+                            </p>
+                        </div>
+                        <div class="app-img-wrap">
+                            <img class="cleanon-app" src="./assets/images/common/app_main_visual_cleanon.svg" alt="클린온 앱 이미지" width="449" height="651" decoding="async" fetchpriority="high">
+                            <img class="cleantok-app" src="./assets/images/common/app_main_visual_cleantok.svg" alt="클린톡 앱 이미지" width="563.159" height="768.66" decoding="async" fetchpriority="high">
+                            <!-- <object class="cleanon-app" data="./assets/images/common/app_main_visual_cleanon.svg" type="image/svg+xml">
+                                <img src="./assets/images/common/app_main_visual_cleanon.svg" alt="클린온 앱 이미지">
+                            </object>
+                            <object class="cleantok-app" data="./assets/images/common/app_main_visual_cleantok.svg" type="image/svg+xml">
+                                <img src="./assets/images/common/app_main_visual_cleantok.svg" alt="클린톡 앱 이미지">
+                            </object> -->
+                        </div>
+                        <div class="download-wrap">
+                            <!-- <ul class="qr-wrap">
+                                <li>
+                                    <img class="qr-img" src="./assets/images/common/qr_test.svg" alt="클린온 앱 다운로드 qr 코드">
+                                    <img class="cleanon-logo" src="./assets/images/logo//logo_cleanon.svg" alt="클린온 로고">
+                                </li>
+                                <li>
+                                    <img class="qr-img" src="./assets/images/common/qr_test.svg" alt="클린톡 앱 다운로드 qr 코드">
+                                    <img class="cleantok-logo" src="./assets/images/logo/logo_cleantok.svg" alt="클린톡 로고">
+                                </li>
+                            </ul> -->
+                            <div class="btn-wrap">
+                                <button class="cleanon-down-btn" type="button" onclick="window.open('https://on.cleanpath.co.kr/')"><span>다운로드</span></button>
+                                <button class="cleantok-down-btn" type="button" onclick="javascript:alert('서비스 준비중입니다.')"><span>다운로드</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="sec02">
+                <div class="inner">
+                    <div class="txt-wrap">
+                        <span class="point">One 솔루션</span><span class="word">, </span><br class="d-mj"><span class="word">사람과 환경을 지키는 <br>지속가능한 폐기물 관리의 <br class="d-mj">길을 엽니다.</span>
+                    </div>
+                </div>
+            </section>
+            <div class="move-area">
+                <div class="nav-wrap">
+                    <div class="nav-btn-wrap">
+                        <button class="nav-btn" type="button" aria-expanded="false" aria-controls="sectionNav">
+                            <span>클린온</span>
+                        </button>
+                    </div>
+                    <nav>
+                        <ul class="move-control" id="sectionNav">
+                            <li>
+                                <a href="#cleanonCont">클린온</a>
+                            </li>
+                            <li>
+                                <a href="#cleantokCont">클린톡</a>
+                            </li>
+                            <li>
+                                <a href="#companyCont">회사소개</a>
+                            </li>
+                            <li>
+                                <a href="#contactCont">문의하기</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="cleanonCont" class="move-sec">
+                    <!-- 클린온 메인 -->
+                    <section class="cleanon-main-sec main-sec">
+                        <div class="inner">
+                            <div class="txt-wrap">
+                                <ul class="tag-list" data-aos="fade-up" data-aos-duration="1000">
+                                    <li>수집 운반업체용</li>
+                                    <li>B2B</li>
+                                    <li>DX Platform</li>
+                                </ul>
+                                <p class="main-copy" data-aos="fade-up" data-aos-duration="1000">
+                                    생활 폐기물 수집·운반 과정을 디지털로 전환하여<br>
+                                    효율성과 안전을 극대화하는 국내 최초 생활 폐기물 DX 플랫폼
+                                </p>
+                                <strong class="main-tit" data-aos="fade-up" data-aos-duration="1000">CleanON</strong>
+                            </div>
+                            <div class="app-img-wrap" data-aos="fade-left" data-aos-duration="2000">
+                                <!-- <object data="./assets/images/common/app_cleanon.svg" type="image/svg+xml">
+                                    <img src="./assets/images/common/app_cleanon.svg" alt="클린온 앱 이미지">
+                                </object> -->
+                                <img src="./assets/images/common/app_cleanon.svg" alt="클린온 앱 이미지" width="399" height="667" decoding="async" fetchpriority="auto">
+                            </div>
+                            <div class="download-wrap" data-aos="fade-up" data-aos-duration="1000">
+                                <button class="android-btn" type="button" onclick="window.open('https://on.cleanpath.co.kr/')"><span>Google Play</span></button>
+                                <button class="ios-btn" type="button" onclick="window.open('https://on.cleanpath.co.kr/')"><span>App Store</span></button>
+                                <button class="cleanon-down-btn" type="button" onclick="window.open('https://on.cleanpath.co.kr/')"><span>다운로드</span></button>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- //클린온 메인 -->
+                    <section class="detail-sec">
+                        <div class="inner">
+                            <div class="detail-info">
+                                <div class="mo-txt-wrap">
+                                    <span class="point">안전</span>
+                                    <strong class="main-tit">중대재해 예방 및 대처를 위한<br>스마트 TBM<span>(작업전 안전점검회의)</span>관리</strong>
+                                </div>
+                                <div class="motion-wrap motion">
+                                    <ul>
+                                        <li class="item01">
+                                            <img class="img-before" src="./assets/images/common/cleanon_detail/item01_01.svg" alt="회의 내용 확인 전" width="446" height="296" decoding="async" fetchpriority="auto">
+                                            <img class="img-after" src="./assets/images/common/cleanon_detail/item01_02.svg" alt="회의 내용 확인 후" width="446" height="296" decoding="async" fetchpriority="auto">
+                                            <!-- <object class="img-before" data="./assets/images/common/cleanon_detail/item01_01.svg" type="image/svg+xml">
+                                                <img src="./assets/images/common/cleanon_detail/item01_01.svg" alt="회의 내용 확인 전">
+                                            </object>
+                                            <object class="img-after" data="./assets/images/common/cleanon_detail/item01_02.svg" type="image/svg+xml">
+                                                <img src="./assets/images/common/cleanon_detail/item01_02.svg" alt="회의 내용 확인 후">
+                                            </object> -->
+                                        </li>
+                                        <li class="item02">
+                                            <img class="img-before" src="./assets/images/common/cleanon_detail/item01_03.svg" alt="안전보건관리점검 항목 확인 전" width="446" height="263" decoding="async" fetchpriority="auto">
+                                            <img class="img-after" src="./assets/images/common/cleanon_detail/item01_04.svg" alt="안전보건관리점검 항목 확인 후" width="446" height="263" decoding="async" fetchpriority="auto">
+                                            <!-- <object class="img-before" data="./assets/images/common/cleanon_detail/item01_03.svg" type="image/svg+xml">
+                                                <img src="./assets/images/common/cleanon_detail/item01_03.svg" alt="안전보건관리점검 항목 확인 전">
+                                            </object>
+                                            <object class="img-after" data="./assets/images/common/cleanon_detail/item01_04.svg" type="image/svg+xml">
+                                                <img src="./assets/images/common/cleanon_detail/item01_04.svg" alt="안전보건관리점검 항목 확인 후">
+                                            </object> -->
+                                        </li>
+                                        <li class="item03">
+                                            <img class="img-before" src="./assets/images/common/cleanon_detail/item01_05.svg" alt="위험성평가 조치여부 확인 전" width="446" height="263" decoding="async" fetchpriority="auto">
+                                            <img class="img-after" src="./assets/images/common/cleanon_detail/item01_06.svg" alt="위험성평가 조치여부 확인 후" width="446" height="263" decoding="async" fetchpriority="auto">
+                                            <!-- <object class="img-before" data="./assets/images/common/cleanon_detail/item01_05.svg" type="image/svg+xml">
+                                                <img src="./assets/images/common/cleanon_detail/item01_05.svg" alt="위험성평가 조치여부 확인 전">
+                                            </object>
+                                            <object class="img-after" data="./assets/images/common/cleanon_detail/item01_06.svg" type="image/svg+xml">
+                                                <img src="./assets/images/common/cleanon_detail/item01_06.svg" alt="위험성평가 조치여부 확인 후">
+                                            </object> -->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="txt-wrap">
+                                    <div class="top-wrap">
+                                        <span class="point">안전</span>
+                                        <strong class="main-tit">중대재해 예방 및 대처를 위한<br>스마트 TBM<span>(작업전 안전점검회의)</span>관리</strong>
+                                        <p class="description">
+                                            사고 발생률을 낮추기 위한 작업 전 안전 점검 회의를<br>
+                                            디지털로 관리해 작업자의 안전을 체계적으로 확보합니다.
+                                        </p>
+                                        <p class="pdf-info pc">TBM(작업전 안전점검회의) 작성 회의록 PDF 다운로드 가능</p>
+                                        <p class="pdf-info mo">TBM 작성 회의록 PDF 다운로드 가능</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="detail-sec">
+                        <div class="inner">
+                            <div class="detail-info type01">
+                                <div class="mo-txt-wrap">
+                                    <span class="point">운영</span>
+                                    <strong class="main-tit">통합 운행 및 작업 일정 관리</strong>
+                                </div>
+                                <div class="img-wrap">
+                                    <!-- <object data="./assets/images/common/cleanon_detail_info_item02.svg" type="image/svg+xml">
+                                        <img src="./assets/images/common/cleanon_detail_info_item02.svg" alt="클린온 상세 정보 이미지">
+                                    </object> -->
+                                    <img src="./assets/images/common/cleanon_detail_info_item02.svg" alt="클린온 상세 정보 이미지" width="652" height="490" decoding="async" fetchpriority="auto">
+                                </div>
+                                <div class="txt-wrap">
+                                    <div class="top-wrap">
+                                        <span class="point">운영</span>
+                                        <strong class="main-tit">통합 운행 및 작업 일정 관리</strong>
+                                        <p class="description">
+                                            차량 운행 경로, 작업 일정, 계근 및 주유 현황을<br>
+                                            하나의 시스템에서 통합 관리하여<br>
+                                            운영 효율 증대와 최적의 운행 계획을 수립합니다.
+                                        </p>
+                                        <p class="pdf-info">운행일지 PDF 다운로드 가능</p>
+                                        <p class="pdf-info">운행실적, 계근관리, 주유비, 수리비 등 엑셀다운로드 가능</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="detail-sec">
+                        <div class="inner">
+                            <div class="detail-info">
+                                <div class="mo-txt-wrap">
+                                    <span class="point">데이터</span>
+                                    <strong class="main-tit">폐기물 수집 운반 효율성 극대화 <br>및 민원 연동</strong>
+                                </div>
+                                <div class="motion-wrap02 motion">
+                                    <div class="chk-cont">
+                                        <div class="chk-wrap">
+                                            <div class="checkmark">
+                                                <svg class="check" viewBox="0 0 120 120" aria-hidden="true">
+                                                    <circle class="bg" cx="60" cy="60" r="58" />
+                                                    <path class="tick" pathLength="100" d="M35 62 L53 78 L85 42" />
+                                                </svg>
+                                            </div>
+                                            <span class="txt">접수</span>
+                                        </div>
+                                        <div class="progress-wrap">
+                                            <span class="progress"></span>
+                                        </div>
+                                        <div class="chk-wrap">
+                                            <div class="checkmark">
+                                                <svg class="check" viewBox="0 0 120 120" aria-hidden="true">
+                                                    <circle class="bg" cx="60" cy="60" r="58" />
+                                                    <path class="tick" pathLength="100" d="M35 62 L53 78 L85 42" />
+                                                </svg>
+                                            </div>
+                                            <span class="txt">진행</span>
+                                        </div>
+                                        <div class="progress-wrap">
+                                            <span class="progress"></span>
+                                        </div>
+                                        <div class="chk-wrap">
+                                            <div class="checkmark">
+                                                <svg class="check" viewBox="0 0 120 120" aria-hidden="true">
+                                                    <circle class="bg" cx="60" cy="60" r="58" />
+                                                    <path class="tick" pathLength="100" d="M35 62 L53 78 L85 42" />
+                                                </svg>
+                                            </div>
+                                            <span class="txt">완료</span>
+                                        </div>
+                                    </div>
+                                    <!-- <object class="truck" data="./assets/images/common/cleanon_detail/truck.svg" type="image/svg+xml">
+                                        <img src="./assets/images/common/cleanon_detail/truck.svg" alt="트럭">
+                                    </object> -->
+                                    <img class="truck" src="./assets/images/common/cleanon_detail/truck.svg" alt="트럭" width="446" height="215" decoding="async" fetchpriority="auto">
+                                </div>
+                                <div class="txt-wrap">
+                                    <div class="top-wrap">
+                                        <span class="point">데이터</span>
+                                        <strong class="main-tit">폐기물 수집 운반 효율성 극대화 <br>및 민원 연동</strong>
+                                        <p class="description">
+                                            데이터 기반의 분석을 통해 수집·운반 효율을 평가하고 <br class="d-mb">개선하며, <br class="d-pc">
+                                            클린톡과의 연동을 통해 민원 처리까지 <br class="d-mb">통합 관리합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="detail-sec">
+                        <div class="inner">
+                            <div class="detail-info type01">
+                                <div class="mo-txt-wrap">
+                                    <span class="point">안전·ESG</span>
+                                    <strong class="main-tit">ESG 성과 측정 및 보고서 제공</strong>
+                                </div>
+                                <div class="img-wrap big">
+                                    <!-- <object data="./assets/images/common/cleanon_detail_info_item04.svg" type="image/svg+xml">
+                                        <img src="./assets/images/common/cleanon_detail_info_item04.svg" alt="클린온 상세 정보 이미지">
+                                    </object> -->
+                                    <img src="./assets/images/common/cleanon_detail_info_item04.svg" alt="클린온 상세 정보 이미지" width="652" height="867" decoding="async" fetchpriority="auto">
+                                </div>
+                                <div class="txt-wrap">
+                                    <div class="top-wrap">
+                                        <span class="point">안전·ESG</span>
+                                        <strong class="main-tit">ESG 성과 측정 및 보고서 제공</strong>
+                                        <p class="description">
+                                            클린온, 클린톡의 운영 데이터를 기반으로,<br>
+                                            폐기물 수집 운반업에 최적화된 *ESG 성과를  측정합니다.
+                                        </p>
+                                    </div>
+                                    <div class="bottom-wrap">
+                                        <div class="summary-wrap">
+                                            <span>Environmental (환경) : 40%</span>
+                                            <ul>
+                                                <li>#수집운반 효율성(CATE)</li>
+                                                <li>#탄소배출량 감축 수치</li>
+                                                <li>#차량관리</li>
+                                            </ul>
+                                            <p>효율성 평가 지표(CATE) 를 통해 업체들의 <br class="d-no">수집 운반 효율성 & 탄소 매출량 감축 성과 측정</p>
+                                        </div>
+                                        <div class="summary-wrap">
+                                            <span>Social (사회) : 40%</span>
+                                            <ul>
+                                                <li>#민원 건수/내용</li>
+                                                <li>#민원 처리 소요 시간</li>
+                                                <li>#민원 처리 주민 만족도</li>
+                                            </ul>
+                                            <p>Clean Tok 접수 및 처리된 <br class="d-no">민원 관리의 효율성 & 주민 만족도 평가</p>
+                                        </div>
+                                        <div class="summary-wrap">
+                                            <span>Governance (지배구조) : 20%</span>
+                                            <ul>
+                                                <li>#출퇴근관리</li>
+                                                <li>#TBM</li>
+                                                <li>#데이터 정확성/투명성</li>
+                                            </ul>
+                                            <p>Clean On 운영 데이터 기반으로 경영관리의 투명성, <br class="d-no">제 법규 준수 등 리스크 관리 능력 평가</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="cleantokCont" class="move-sec">
+                    <!-- 클린톡 메인 -->
+                    <section class="cleantok-main-sec main-sec">
+                        <div class="inner">
+                            <div class="txt-wrap">
+                                <ul class="tag-list" data-aos="fade-up" data-aos-duration="1000">
+                                    <li>주민, 지자체용</li>
+                                    <li>B2C</li>
+                                    <li>DX Platform</li>
+                                </ul>
+                                <p class="main-copy" data-aos="fade-up" data-aos-duration="1000">
+                                    사진 촬영만으로 간단하게! 접수부터 처리·완료·평가까지<br>
+                                    원스톱으로 해결되는 스마트 폐기물 민원 플랫폼
+                                </p>
+                                <strong class="main-tit" data-aos="fade-up" data-aos-duration="1000">CleanTOK</strong>
+                            </div>
+                            <div class="motion-wrap">
+                                <object class="app-img" data="./assets/images/common/app_cleantok.svg" type="image/svg+xml">
+                                    <img src="./assets/images/common/app_cleantok.svg" alt="클린톡 앱 이미지">
+                                </object>
+                                <div class="rolling-bg"></div>
+                                <!-- <object class="rolling-bg" data="./assets/images/common/rolling_item.svg" type="image/svg+xml">
+                                    <img src="./assets/images/common/rolling_item.svg" alt="롤링 배경 이미지">
+                                </object> -->
+                                <object class="truck-img" data="./assets/images/common/cleantok_truck.svg" type="image/svg+xml">
+                                    <img src="./assets/images/common/cleantok_truck.svg" alt="클린톡 트럭 이미지">
+                                </object>
+                            </div>
+                            <div class="download-wrap" data-aos="fade-up" data-aos-duration="1000">
+                                <button class="android-btn" type="button" onclick="javascript:alert('서비스 준비중입니다.')"><span>Google Play</span></button>
+                                <button class="ios-btn" type="button" onclick="javascript:alert('서비스 준비중입니다.')"><span>App Store</span></button>
+                                <button class="cleantok-down-btn" type="button" onclick="javascript:alert('서비스 준비중입니다.')"><span>다운로드</span></button>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- //클린톡 메인 -->
+                    <section class="detail-sec">
+                        <div class="inner">
+                            <div class="detail-info">
+                                <div class="mo-txt-wrap">
+                                    <span class="point blue">민원</span>
+                                    <strong class="main-tit">간편 민원 신고</strong>
+                                </div>
+                                <div class="motion-wrap03 motion">
+                                    <img class="photo-before" src="./assets/images/common/cleantok_detail/item01_01.png" alt="사진 촬영 전" decoding="async" fetchpriority="auto">
+                                    <img class="photo-after" src="./assets/images/common/cleantok_detail/item01_02.png" alt="사진 촬영 후" decoding="async" fetchpriority="auto">
+                                </div>
+                                <div class="txt-wrap">
+                                    <div class="top-wrap">
+                                        <span class="point blue">민원</span>
+                                        <strong class="main-tit">간편 민원 신고</strong>
+                                        <p class="description">
+                                            폐기물 사진 촬영만으로 민원을 쉽고 빠르게 접수하고,<br>
+                                            접수부터 완료까지의 단계별 진행 상황을 확인할 수 있습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="detail-sec">
+                        <div class="inner">
+                            <div class="detail-info type01">
+                                <div class="mo-txt-wrap">
+                                    <span class="point blue">정보</span>
+                                    <strong class="main-tit">스마트 배출 및 수거 정보 제공</strong>
+                                </div>
+                                <div class="img-wrap">
+                                    <!-- <object data="./assets/images/common/cleantok_detail_info_item02.svg" type="image/svg+xml">
+                                        <img src="./assets/images/common/cleantok_detail_info_item02.svg" alt="클린톡 상세 정보 이미지">
+                                    </object> -->
+                                    <img src="./assets/images/common/cleantok_detail_info_item02.svg" alt="클린톡 상세 정보 이미지" width="652" height="490" decoding="async" fetchpriority="auto">
+                                </div>
+                                <div class="txt-wrap">
+                                    <div class="top-wrap">
+                                        <span class="point blue">정보</span>
+                                        <strong class="main-tit">스마트 배출 및 수거 정보 제공</strong>
+                                        <p class="description">
+                                            쓰레기 배출 및 수거 일정을 쉽게 확인할 수 있는 알림과 함께<br>
+                                            올바른 재활용/분리배출 가이드를 제공합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="detail-sec">
+                        <div class="inner">
+                            <div class="detail-info">
+                                <div class="mo-txt-wrap">
+                                    <span class="point blue">소통</span>
+                                    <strong class="main-tit">소통 강화와 민원 만족도 평가</strong>
+                                </div>
+                                <div class="motion-wrap04 motion">
+                                    <!-- <object class="fax" data="./assets/images/common/cleantok_detail/item03_01.svg" type="image/svg+xml">
+                                        <img src="./assets/images/common/cleantok_detail/item03_01.svg" alt="클린톡 상세 정보 이미지">
+                                    </object>
+                                    <object class="paper" data="./assets/images/common/cleantok_detail/item03_02.svg" type="image/svg+xml">
+                                        <img src="./assets/images/common/cleantok_detail/item03_02.svg" alt="클린톡 상세 정보 이미지">
+                                    </object> -->
+                                    <img class="fax" src="./assets/images/common/cleantok_detail/item03_01.svg" alt="클린톡 상세 정보 이미지" width="455" height="114" decoding="async" fetchpriority="auto">
+                                    <img class="paper" src="./assets/images/common/cleantok_detail/item03_02.svg" alt="클린톡 상세 정보 이미지" width="381" height="460" decoding="async" fetchpriority="auto">
+                                </div>
+                                <div class="txt-wrap">
+                                    <div class="top-wrap">
+                                        <span class="point blue">소통</span>
+                                        <strong class="main-tit">소통 강화와 민원 만족도 평가</strong>
+                                        <p class="description">
+                                            자치단체, 환경공무관, 주민 간의 원활한 소통과<br>
+                                            협업을 지원하고, 민원 처리 후<br>
+                                            만족도 평가 시스템을 제공합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="detail-sec">
+                        <div class="inner">
+                            <div class="detail-info type01">
+                                <div class="mo-txt-wrap">
+                                    <span class="point blue">서비스</span>
+                                    <strong class="main-tit">자원순환 특화 서비스</strong>
+                                </div>
+                                <div class="img-wrap">
+                                    <!-- <object data="./assets/images/common/cleantok_detail_info_item04.svg" type="image/svg+xml">
+                                        <img src="./assets/images/common/cleantok_detail_info_item04.svg" alt="클린톡 상세 정보 이미지">
+                                    </object> -->
+                                    <img src="./assets/images/common/cleantok_detail_info_item04.svg" alt="클린톡 상세 정보 이미지" width="652" height="490" decoding="async" fetchpriority="auto">
+                                </div>
+                                <div class="txt-wrap">
+                                    <div class="top-wrap">
+                                        <span class="point blue">서비스</span>
+                                        <strong class="main-tit">자원순환 특화 서비스</strong>
+                                        <p class="description">
+                                            재활용 가치가 높은 커피박과 같은 특정 폐기물에 대해<br>
+                                            무상 수거를 신청할 수 있어 자원순환을 적극적으로 돕습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="companyCont" class="move-sec">
+                    <section class="company-sec">
+                        <div class="inner">
+                            <div class="full_img">
+                                <!-- 마스크(clip-path)는 여기만 건드림 -->
+                                <div class="bg-mask">
+                                    <div class="bg-stack">
+                                        <img class="bg-img layer-1" src="./assets/images/common/company_bg01.png" alt="회사 소개 배경 1">
+                                        <img class="bg-img layer-2" src="./assets/images/common/company_bg02.png" alt="회사 소개 배경 2">
+                                        <img class="bg-img layer-3" src="./assets/images/common/company_bg03.png" alt="회사 소개 배경 3">
+                                        <img class="bg-img layer-4" src="./assets/images/common/company_bg04.png" alt="회사 소개 배경 4">
+                                    </div>
+                                </div>
+                                <div class="b_txt">
+                                    <div class="step step-1 main-txt-wrap">
+                                        <p class="top_txt">
+                                            GreenPATH,<br>
+                                            새로운 표준을 만들다.
+                                        </p>
+                                        <p class="btm_txt">
+                                            (주)그린패스는 디지털 기술로 생활폐기물 관리의<br>
+                                            새로운 표준을 만들어갑니다.<br>
+                                            우리는 ESG 경영과 탄소중립 실현을 목표로,<br>
+                                            주민 · 자치단체 · 수집운반 업체 모두가 함께 성장할 수 있는<br>
+                                            디지털 기반 관리 체계를 지원합니다.
+                                        </p>
+                                    </div>
+                                    <div class="step step-2 common-txt-wrap">
+                                        <span>01</span>
+                                        <p class="top_txt">변화와 과제</p>
+                                        <p class="btm_txt">
+                                            강화되는 중대재해처벌법 대응과 ESG 실천은<br>
+                                            생활폐기물 업계가 더 이상 미룰 수 없는 과제가 되었습니다.<br>
+                                            단순한 수거·운반을 넘어 안전·보건 관리와 운영 효율성<br>
+                                            그리고 지속가능성을 동시에 확보해야 합니다.
+                                        </p>
+                                    </div>
+                                    <div class="step step-3 common-txt-wrap">
+                                        <span>02</span>
+                                    <p class="top_txt">그린패스의 해답</p>
+                                    <ul class="btm_txt">
+                                        <li>스마트 데이터 관리로 비용 절감 & 효율 극대화</li>
+                                        <li>안전·보건 강화로 중대재해 리스크 최소화</li>
+                                        <li>ESG 경영 지원으로 사회적 가치 창출</li>
+                                        <li>친환경 운행 관리로 탄소중립 실현</li>
+                                    </ul>
+                                    </div>
+                                    <div class="step step-4 common-txt-wrap">
+                                        <span>03</span>
+                                        <p class="top_txt">우리의 약속</p>
+                                        <p class="btm_txt">
+                                            그린패스는  기술 혁신과 책임 경영을 통해 <br>
+                                            생활폐기물 관리 산업의 지속 가능한 미래를 열어가겠습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="contactCont" class="move-sec">
+                    <section class="contact-sec">
+                        <div class="inner">
+                            <div class="contact-cont">
+                                <div class="empty"></div>
+                                <div class="contact-wrap">
+                                    <div class="mo-txt-wrap">
+                                        <strong>CONTACT US</strong>
+                                    </div>
+                                    <div class="map">
+                                        <!-- <object data="./assets/images/common/map.svg" type="image/svg+xml">
+                                            <img src="./assets/images/common/map.svg" alt="그린패스 위치">
+                                        </object> -->
+                                        <img src="./assets/images/common/map.svg" alt="그린패스 위치" width="800" height="454" decoding="async" fetchpriority="auto">
+                                    </div>
+                                    <div class="txt-wrap">
+                                        <strong>CONTACT US</strong>
+                                        <ul>
+                                            <li>
+                                                <span class="icon location" aria-label="위치 아이콘"></span>
+                                                <div class="info">
+                                                    <span>주소</span>
+                                                    <p>서울특별시 관악구 남부순환로248길 78, 2층</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <span class="icon mail" aria-label="위치 아이콘"></span>
+                                                <div class="info">
+                                                    <span>메일 문의</span>
+                                                    <a href="mailto:greenpathpark@gmail.com">greenpathpark@gmail.com</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="ft-inner">
+                <div class="ft-top">
+                    <strong>GreenPATH</strong>
+                    <div class="contact">
+                        <span>메일 문의</span>
+                        <a href="mailto:greenpathpark@gmail.com">greenpathpark@gmail.com</a>
+                    </div>
+                </div>
+                <div class="ft-bottom">
+                    <span class="company-name">(주)그린패스</span>
+                    <ul class="business-info">
+                        <li>사업자 등록번호 : 887-87-03797</li>
+                        <li>주소 : 서울특별시 관악구 남부순환로248길 78, 2층</li>
+                    </ul>
+                    <p class="copyright">ⓒ 2025 GreenPATH Korea. All Rights Reserved.</p>
+                    <p class="copyright-notice">본 홈페이지 및 회사가 운영하는 플랫폼·서비스(클린온, 클린톡)에 게시된 모든 콘텐츠(텍스트, 이미지, 로고, 디자인, 자료 등)의 저작권은 <strong>㈜그린패스</strong>에 있으며, <br class="d-pc">사전 서면 동의 없이 무단 복제·배포·전송·출판 등을 금합니다. 이를 위반할 경우 <strong>민·형사상의 법적 책임</strong>이 발생할 수 있습니다.</p>
+                    <ul class="util-wrap">
+                        <li>
+                            <a href="./html/legal.html#terms" target="_blank">이용약관</a>
+                        </li>
+                        <li>
+                            <a href="./html/legal.html#privacy" target="_blank">개인정보처리방침</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

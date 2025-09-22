@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenPATH</title>
+    <meta name="description" content="기술 혁신과 책임 경영을 통해 생활폐기물 관리 산업의 지속 가능한 미래를 열어가겠습니다.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="GreenPATH">
+    <meta property="og:description" content="기술 혁신과 책임 경영을 통해 생활폐기물 관리 산업의 지속 가능한 미래를 열어가겠습니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../assets/images/og_image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple_touch_icon.png" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/font.css">
+    <!-- <link rel="stylesheet" href="../assets/css/main.css"> -->
+    <link rel="stylesheet" href="../assets/css/sub.css">
+
+    <!-- js -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script>
+    (function () {
+        // 1) 브라우저의 자동 스크롤 복원 끄기
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        // 2) 초기 해시를 저장하고, 일단 URL에서 제거해서 native 앵커 점프를 차단
+        window.__initialHash = location.hash; // 예: "#privacy"
+        if (window.__initialHash) {
+            history.replaceState(null, "", location.pathname + location.search);
+        }
+
+        // 3) 혹시 모를 레이아웃 변화 전에 최상단 고정
+        window.scrollTo(0, 0);
+
+        // 4) 폰트/이미지 로드 후 재점프 방지용 안전핀
+        window.addEventListener("load", function () {
+            window.scrollTo(0, 0);
+        });
+        })();
+    </script>
+
+</head>
+<body>
+    <div class="main" id="wrapper">
+        <header>
+            <div class="hd-inner">
+                <h1 class="logo">
+                    <a href="../index.html">
+                        <img src="../assets/images/logo/logo.svg" alt="그린패스 로고">
+                    </a>
+                </h1>
+            </div>
+        </header>
+        <main id="wrap">
+            <section class="legal-sec">  
+                <div class="inner">
+                    <div class="legal-tit">
+                        <strong>그린패스 약관 및 개인정보 보호</strong>
+                    </div>
+                    <div class="tab-menu">
+                        <div class="tab-list-wrap">
+                            <ul class="tab-list" role="tablist">
+                                <li class="on" role="tab">
+                                    <a href="javascript:void(0)">서비스 이용약관</a>
+                                </li>
+                                <li role="tab">
+                                    <a href="javascript:void(0)">개인정보처리방침</a>
+                                </li>
+                            </ul>
+                            <div class="tab-indicator"></div>
+                        </div>
+                        <div class="tab-cont">
+                            <!-- 서비스 이용약관 -->
+                            <div id="terms" class="tab-panel on" role="tabpanel">
+                                <p class="tit">제1조 (목적)</p>
+                                <p>
+                                    본 약관은 ㈜그린패스(이하 "회사")가 운영하는 홈페이지의 이용조건 및 절차, 회사와 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.
+                                </p>
+                                <p class="tit">제2조 (서비스의 제공)</p>
+                                <p>
+                                    회사는 홈페이지를 통해 다음과 같은 서비스를 제공합니다.<br>
+                                    1.	회사 및 서비스(생활폐기물 수집·운반 디지털 전환 플랫폼, 스마트 민원관리 플랫폼) 소개<br>
+                                    2.	회사 소식, 보도자료, 홍보 콘텐츠 제공<br>
+                                    3.	고객 문의 접수 창구
+                                </p>
+                                <p class="tit">제3조 (저작권)</p>
+                                <p>
+                                    홈페이지에 게재된 텍스트, 이미지, 로고 등 콘텐츠의 저작권은 회사에 있으며, 이용자는 이를 무단 복제·배포할 수 없습니다.
+                                </p>
+                                <p class="tit">제4조 (면책사항)</p>
+                                <p>
+                                    1.	회사는 홈페이지에 게재된 정보의 정확성 확보를 위해 최선을 다하나, 법적 책임을 보장하지는 않습니다.<br>
+                                    2.	외부 링크된 사이트의 내용에 대해서는 책임지지 않습니다.
+                                </p>
+                                <p class="tit">제5조 (준거법 및 관할)</p>
+                                <p>
+                                    본 약관은 대한민국 법령에 따르며, 분쟁 발생 시 회사 본점 소재지를 관할하는 법원을 제1심 관할로 합니다.
+                                </p>
+                            </div>
+                            <!-- 개인정보처리방침 -->
+                            <div id="privacy" class="tab-panel" role="tabpanel">
+                                <p>
+                                    ㈜그린패스(이하 "회사")는 「개인정보 보호법」 등 관련 법령을 준수하며, 홈페이지 운영과 관련하여 다음과 같이 개인정보 처리방침을 공개합니다.
+                                </p>
+                                <p class="tit">제1조 (개인정보의 수집 여부)</p>
+                                <p>
+                                    회사는 홈페이지에서 회원가입, 게시판, 댓글 기능을 운영하지 않으며, <strong>이용자의 개인정보를 직접 수집하지 않습니다.</strong>
+                                </p>
+                                <p class="tit">제2조 (자동 수집 정보)</p>
+                                <p>
+                                    홈페이지 이용 과정에서 접속 로그, 쿠키, 브라우저 정보 등은 서버 운영을 위해 자동으로 수집될 수 있습니다.<br>
+                                    •	이 정보는 통계 분석 및 서비스 개선 목적에만 사용되며, 특정 개인을 식별하지 않습니다.
+                                </p>
+                                <p class="tit">제3조 (개인정보의 제3자 제공 및 위탁)</p>
+                                <p>
+                                    회사는 개인정보를 수집하지 않으므로, 외부 제공이나 위탁을 하지 않습니다.
+                                </p>
+                                <p class="tit">제4조 (개인정보 보호책임자)</p>
+                                <p>
+                                    •	담당자: 박상곤<br>
+                                    •	연락처: <a href="tel:02-876-6478">02-876-6478</a><br>
+                                    •	이메일: <a href="mailto:greenpathpark@gmail.com">greenpathpark@gmail.com</a><br>
+                                </p>
+                                <p class="tit">제5조 (개정 및 고지)</p>
+                                <p>
+                                    본 방침은 홈페이지 공지사항을 통해 고지되며, 변경 시 즉시 적용됩니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>              
+            </section>
+        </main>
+        <footer>
+            <div class="sub-ft-inner">
+                <strong class="company-name">(주)그린패스</strong>
+                <p class="copyright">ⓒ 2025 GreenPATH Korea. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
