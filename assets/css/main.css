@@ -1846,13 +1846,13 @@ footer .sub-ft-inner .copyright {
 .company-sec {
   margin-bottom: 220px;
 }
-.company-sec > .inner {
-  min-height: var(--app-dvh, 100dvh);
-}
 .company-sec .full_img {
   position: relative;
   width: 100%;
   height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  min-height: 100vh; /* fallback */
   overflow: hidden;
 }
 @supports (height: 100svh) {
