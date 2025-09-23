@@ -39,6 +39,9 @@ $(function () {
     let companyCtx = null;       // gsap.context 저장
     let companyTL  = null;       // 타임라인 저장
 
+    // 회사 섹션 스크럽 길이 안정화를 위한 초기 VH 캐시
+    let initVH = null;
+
     // ========================
     // 유틸
     // ========================
@@ -343,8 +346,14 @@ $(function () {
     getVisibleSection();
     handleScroll();
 
-    // 회사소개
+    // ========================
+    // 회사소개 (GSAP)
+    // ========================
     gsap.registerPlugin(ScrollTrigger);
+    // 모바일 주소창 show/hide 등 가짜 리사이즈로 인한 내부 refresh 방지
+    ScrollTrigger.config({
+        ignoreMobileResize: true
+    });
 
     function buildCompanyTimeline() {
         // 이전 타임라인/핸들러 깨끗하게 제거
@@ -358,6 +367,11 @@ $(function () {
             const bTxt     = section.querySelector(".b_txt");
             const images   = gsap.utils.toArray(section.querySelectorAll(".bg-img"));
             const steps    = gsap.utils.toArray(section.querySelectorAll(".b_txt .step"));
+
+            // 초기 VH 캐시 (한 번만)
+            if (initVH == null) {
+                initVH = (window.visualViewport?.height ?? window.innerHeight);
+            }
 
             // 원래 인라인 스타일 저장(리버트 시 복구)
             ScrollTrigger.saveStyles([fullImg, bgStack, bTxt, images, ...steps]);
@@ -425,7 +439,8 @@ $(function () {
                 scrollTrigger: {
                     trigger: fullImg,
                     start: "top top",
-                    end: () => "+=" + (window.innerHeight * (images.length + 1.6)),
+                    // initVH(초기값 고정) 기반으로 end 길이 산정 → 모바일 주소창 높이 변동에도 안정
+                    end: () => "+=" + (initVH * (images.length + 1.6)),
                     scrub: true,
                     pin: true,
                     anticipatePin: 1,
@@ -477,12 +492,12 @@ $(function () {
 
                 if (nextImg) {
                     companyTL.to(img,     { opacity: 0, duration: 0.7 }, "+=0.05")
-                            .to(nextImg, { opacity: 1, duration: 0.7 }, "<");
+                             .to(nextImg, { opacity: 1, duration: 0.7 }, "<");
                 }
                 if (curStep && nextStep) {
                     companyTL.to(curStep,  { yPercent: -300, opacity: 0, duration: 0.55 }, "<")
-                            .fromTo(nextStep, { yPercent: 50, opacity: 0 },
-                                            { yPercent: -50, opacity: 1, duration: 0.55, immediateRender:false }, "<");
+                             .fromTo(nextStep, { yPercent: 50, opacity: 0 },
+                                              { yPercent: -50, opacity: 1, duration: 0.55, immediateRender:false }, "<");
                 }
             });
 
@@ -514,16 +529,21 @@ $(function () {
     ScrollTrigger.refresh();
 
     // ========================
-    // 리사이즈/오리엔테이션/폰트 로드 후 재빌드 (단일 rAF 디바운스)
+    // 리사이즈/오리엔테이션/폰트 로드 후 재빌드
+    // → "너비가 변할 때만" GSAP 리프레시/재빌드
     // ========================
     let resizeRafId = null;
 
-    function rebuildAll() {
+    // 마지막 뷰포트 너비(소수점 반올림 오차 방지용 threshold 포함)
+    let lastVW = (window.visualViewport?.width ?? window.innerWidth);
+    const VW_EPS = 1; // 1px 이하는 무시
+
+    function rebuildAllWidthChangeOnly() {
         // 1) 모드 체크 & 전환 처리
         const prevMode = isMobileMode;
         isMobileMode = isMobile();
 
-        // 2) 경계 재계산
+        // 2) 경계 재계산(높이 변동만 있을 때도 최소한의 스크롤 로직 안정화)
         recalcAreaBounds();
 
         // 3) 모드 전환 시 상태 리셋/보정
@@ -533,12 +553,12 @@ $(function () {
             $navBtnWrap.removeClass('on is-hide');
 
             if (isMobileMode) {
-            $menu.stop(true, true).hide();
-            $navWrap.removeClass('reveal on');
+                $menu.stop(true, true).hide();
+                $navWrap.removeClass('reveal on');
             } else {
-            $menu.stop(true, true).show();
-            $navWrap.removeClass('reveal on');
-            if (!isCompanyExpanded) $header.removeClass('is-hide');
+                $menu.stop(true, true).show();
+                $navWrap.removeClass('reveal on');
+                if (!isCompanyExpanded) $header.removeClass('is-hide');
             }
         }
 
@@ -551,26 +571,44 @@ $(function () {
         ScrollTrigger.refresh();
     }
 
-    function onResizeDebounced() {
+    // “실제 너비 변화” 또는 “방향 전환”일 때만 전체 재빌드
+    function onViewportResizeDebounced(force = false) {
         if (resizeRafId) cancelAnimationFrame(resizeRafId);
         resizeRafId = requestAnimationFrame(() => {
-            // 더블 rAF로 레이아웃 안정화
-            requestAnimationFrame(() => {
-            rebuildAll();
-            resizeRafId = null;
-            });
+            const curVW = (window.visualViewport?.width ?? window.innerWidth);
+            const widthChanged = Math.abs(curVW - lastVW) > VW_EPS;
+
+            if (force || widthChanged) {
+                // 폭이 변했거나(브라우저 창 크기/디바이스 회전 등) 강제 요청일 때만 풀 리프레시
+                lastVW = curVW;
+                // 더블 rAF로 레이아웃 안정화 후 재빌드
+                requestAnimationFrame(() => {
+                    rebuildAllWidthChangeOnly();
+                    resizeRafId = null;
+                });
+            } else {
+                // 높이만 바뀐 상황(주소창/키보드/툴바) → 최소 보정만 수행
+                recalcAreaBounds();
+                handleScroll();
+                resizeRafId = null;
+            }
         });
     }
 
-    // jQuery로 통일
-    $win.off('resize.main').on('resize.main', onResizeDebounced);
+    // jQuery resize: 주소창 show/hide로도 불릴 수 있으므로 width 체크
+    $win.off('resize.main').on('resize.main', () => onViewportResizeDebounced(false));
 
-    // 단말 방향 전환도 동일 처리
-    $(window).on('orientationchange', onResizeDebounced);
+    // visualViewport: 모바일 주소창/키보드로 인한 height 변화가 잦음
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', () => onViewportResizeDebounced(false));
+    }
 
-    // 폰트 로드 후에도 한 번 더 안정화
+    // 방향 전환은 무조건 재빌드
+    $(window).off('orientationchange').on('orientationchange', () => onViewportResizeDebounced(true));
+
+    // 폰트 로드 후(메트릭 변동 가능) → "너비 변화 여부" 판단 후 처리
     if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(onResizeDebounced);
+        document.fonts.ready.then(() => onViewportResizeDebounced(false));
     }
 
 });
