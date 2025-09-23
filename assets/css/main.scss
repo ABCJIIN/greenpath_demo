@@ -1643,13 +1643,13 @@ footer {
 
 .company-sec {
     margin-bottom: 220px;
-    > .inner {
-        min-height: var(--app-dvh, 100dvh);
-    }
     .full_img { 
         position: relative; 
         width: 100%;
         height: 100vh; 
+        min-height: 100svh;
+        min-height: 100dvh;
+        min-height: 100vh; /* fallback */
         overflow: hidden; 
         @supports (height: 100svh) {
             height: 100svh;  // iOS 16+ 등: 안전 뷰포트
