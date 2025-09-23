@@ -1643,6 +1643,9 @@ footer {
 
 .company-sec {
     margin-bottom: 220px;
+    > .inner {
+        min-height: var(--app-dvh, 100dvh);
+    }
     .full_img { 
         position: relative; 
         width: 100%;

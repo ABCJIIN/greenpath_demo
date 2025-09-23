@@ -1846,6 +1846,9 @@ footer .sub-ft-inner .copyright {
 .company-sec {
   margin-bottom: 220px;
 }
+.company-sec > .inner {
+  min-height: var(--app-dvh, 100dvh);
+}
 .company-sec .full_img {
   position: relative;
   width: 100%;
